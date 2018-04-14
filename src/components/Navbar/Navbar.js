@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Responsive } from "semantic-ui-react";
 import NavBarDesktop from "../NavBarDesktop/NavBarDesktop";
-import NavBarMobile from "../NavbarMobile/NavBarMobile";
+import NavBarMobile from "../NavBarMobile/NavBarMobile";
 import NavBarChildren from "../NavBarChildren/NavBarChildren";
 
 class NavBar extends Component {

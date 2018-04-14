@@ -35,7 +35,7 @@ const BookingSummary = () => (
         <Table style={{margin: "5px"}} size="large" columns={2} singleLine>
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Service</Table.HeaderCell>
+              <Table.HeaderCell textAlign="center">Service</Table.HeaderCell>
               <Table.HeaderCell textAlign="right">Price</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
