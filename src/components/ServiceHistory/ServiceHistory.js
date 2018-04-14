@@ -1,56 +1,53 @@
 import React from "react";
 import "./ServiceHistory.css";
-import { Icon, Table } from 'semantic-ui-react';
+import { Card, Container, Icon, Image, Rating } from "semantic-ui-react";
 
 const ServiceHistory = () => (
-  <Table celled striped>
-    <Table.Header>
-      <Table.Row>
-        <Table.HeaderCell colSpan='3'>Service History</Table.HeaderCell>
-      </Table.Row>
-    </Table.Header>
+  <Container>
+    <Card style={{ width: '70%', margin: '40px' }} textAlign="left" centered fluid>
+      <Card.Content textAlign="left" >
+        <Card.Header>October 30, 2017</Card.Header>
+        <Card.Meta>Afternoon</Card.Meta>
+        <Card.Meta>Mow</Card.Meta>
+        <Card.Description>Two Brothers Mowing</Card.Description>
+        <Card.Description>$26.50</Card.Description>
+      </Card.Content>
 
-    <Table.Body>
-      <Table.Row>
-        <Table.Cell collapsing>
-          <Icon name='folder' /> node_modulesw
-        </Table.Cell>
-        <Table.Cell>Initial commit</Table.Cell>
-        <Table.Cell collapsing textAlign='right'>10 hours ago</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>
-          <Icon name='folder' /> test
-        </Table.Cell>
-        <Table.Cell>Initial commit</Table.Cell>
-        <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>
-          <Icon name='folder' /> build
-        </Table.Cell>
-        <Table.Cell>Initial commit</Table.Cell>
-        <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>
-          <Icon name='file outline' /> package.json
-        </Table.Cell>
-        <Table.Cell>Initial commit</Table.Cell>
-        <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>
-          <Icon name='file outline' /> Gruntfile.js
-        </Table.Cell>
-        <Table.Cell>Initial commit</Table.Cell>
-        <Table.Cell textAlign='right'>10 hours ago</Table.Cell>
-      </Table.Row>
-    </Table.Body>
-  </Table>
-)
+      <Card.Content extra>
+          <Rating
+            textAlign="right"
+            size="huge"
+            icon="star"
+            defaultRating={5}
+            maxRating={5}
+          />
+        <Card.Description>Perfect mow!</Card.Description>
+      </Card.Content>
+    </Card>
+    <Card style={{ width: '70%', margin: '40px' }} textAlign="left" centered fluid>
+      <Card.Content textAlign="left" >
+        <Card.Header>October 16, 2017</Card.Header>
+        <Card.Meta>Morning</Card.Meta>
+        <Card.Meta>Maid</Card.Meta>
+        <Card.Description>Two Brothers Cleaning</Card.Description>
+        <Card.Description>Extras: none</Card.Description>
+        <Card.Description>$66.45</Card.Description>
+      </Card.Content>
 
+      <Card.Content extra>
 
+          <Rating
+            textAlign="right"
+            size="huge"
+            icon="star"
+            defaultRating={4}
+            maxRating={5}
+          />
 
+        <Card.Description>Very professional!</Card.Description>
+      </Card.Content>
+    </Card>
+  </Container>
+);
 
 export default ServiceHistory;

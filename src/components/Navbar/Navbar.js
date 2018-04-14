@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Responsive } from "semantic-ui-react";
 import NavBarDesktop from "../NavBarDesktop/NavBarDesktop";
-import NavBarMobile from "../NavbarMobile/NavbarMobile";
+import NavBarMobile from "../NavbarMobile/NavBarMobile";
 import NavBarChildren from "../NavBarChildren/NavBarChildren";
 
 class NavBar extends Component {
@@ -25,10 +25,10 @@ class NavBar extends Component {
         <div>
           <Responsive {...Responsive.onlyMobile}>
             <NavBarMobile
-              leftItems={LeftItems}
+              LeftItems={LeftItems}
               onPusherClick={this.handlePusher}
               onToggle={this.handleToggle}
-              rightItems={RightItems}
+              RightItems={RightItems}
               visible={visible}
             >
               <NavBarChildren>{children}</NavBarChildren>

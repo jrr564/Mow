@@ -14,9 +14,7 @@ const NavBarMobile = ({
     <Sidebar
       as={Menu}
       animation="overlay"
-      color="green"
       icon="labeled"
-      inverted
       items={LeftItems}
       vertical
       visible={visible}
@@ -24,18 +22,18 @@ const NavBarMobile = ({
     <Sidebar.Pusher
       dimmed={visible}
       onClick={onPusherClick}
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "10vh" }}
     >
-      <Menu color="green" fixed="top" inverted>
+      <Menu fixed="top" >
         <Menu.Item>
           <Image
             size="mini"
             src="https://d30y9cdsu7xlg0.cloudfront.net/png/12106-200.png"
           />
         </Menu.Item>
-        <Menu.Item onClick={onToggle}>
-          <Icon name="sidebar" />
-        </Menu.Item>
+        <Menu.Menu position="left">
+          {_.map(LeftItems, item => <Menu.Item {...item} />)}
+        </Menu.Menu>
         <Menu.Menu position="right">
           {_.map(RightItems, item => <Menu.Item {...item} />)}
         </Menu.Menu>

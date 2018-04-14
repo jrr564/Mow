@@ -3,9 +3,9 @@ import "./SignUpForm1.css";
 import { Button, Segment, Checkbox, Form, Container, Message } from "semantic-ui-react";
 
 const SignUpForm1 = () => (
-  <div>
-    <Segment style={{ padding: '1em 10em' }} inverted>
-      <Form inverted>
+  <Container>
+    <Segment style={{ padding: '1em 10em' }} >
+      <Form >
         <Form.Input label="Email"/>
         <Form.Field>
           <label >Password</label>
@@ -14,10 +14,10 @@ const SignUpForm1 = () => (
         <Form.Field>
           <Checkbox label="I agree to the Terms and Conditions" />
         </Form.Field>
-        <Button inverted size="huge" type="submit">Create Account</Button>
+        <Button size="huge" type="submit">Create Account</Button>
       </Form>
     </Segment>
-  </div>
+  </Container>
 );
 
 export default SignUpForm1;

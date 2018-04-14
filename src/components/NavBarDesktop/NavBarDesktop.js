@@ -1,9 +1,10 @@
 import _ from "lodash";
 import React from "react";
+import "./NavBarDesktop.css";
 import { Image, Menu } from "semantic-ui-react";
 
 const NavBarDesktop = ({ LeftItems, RightItems }) => (
-    <Menu color="green" fixed="top" inverted>
+    <Menu fixed="top" >
       <Menu.Item>
         <Image size="mini" src="https://d30y9cdsu7xlg0.cloudfront.net/png/12106-200.png" />
       </Menu.Item>
