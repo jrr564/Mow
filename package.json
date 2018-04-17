@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "lodash": "^4.17.5",
+    "material-ui": "^0.20.0",
+    "material-ui-image": "^2.1.1",
+    "mdi-material-ui": "^3.2.0",
     "react": "^16.2.0",
-    "react-credit-cards": "^0.7.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.1",
-    "semantic-ui-css": "^2.3.1",
-    "semantic-ui-react": "^0.79.1"
+    "react-style-tag": "^2.0.1",
+    "semantic-ui-react": "^0.79.0"
   },
   "scripts": {
     "start": "react-scripts start",
