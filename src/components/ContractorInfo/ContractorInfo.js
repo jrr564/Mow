@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContractorInfo.css";
-
+import { Link } from "react-router-dom";
 import SegmentGroup, {
   Segment,
   Container,
@@ -12,9 +12,9 @@ import SegmentGroup, {
 const ContractorInfo = () => (
   <Container style={{ width: "60%" }}>
     <Segment.Group>
-        <Segment>
-            <h1>Account Information</h1>
-        </Segment>
+      <Segment as="h1" size="huge" textAlign='center'>
+      <Icon name="id card"/>Account Information
+      </Segment>
       <Segment.Group horizontal>
         <Segment>
           {" "}
@@ -45,10 +45,7 @@ const ContractorInfo = () => (
       </Segment.Group>
       <Segment.Group horizontal>
         <Segment>
-          <Header size="tiny">
-            Bank Account
-          </Header>{" "}
-          XXXXXXXXX-XXXXX5678
+          <Header size="tiny">Bank Account</Header> XXXXXXXXX-XXXXX5678
         </Segment>
         <Segment>
           <Header size="tiny">SSN</Header> XXX-XX-1234
@@ -57,7 +54,9 @@ const ContractorInfo = () => (
           <Header size="tiny">YTD Gross</Header> $$$$$
         </Segment>
         <Segment>
-          <Button>Edit Information</Button>
+          <Link to="/SignUpCustomer/SignUpForm2">
+            <Button fluid>Edit Information</Button>
+          </Link>
         </Segment>
       </Segment.Group>
     </Segment.Group>

@@ -10,7 +10,7 @@ const NavBarMobile = ({
   RightItems,
   visible
 }) => (
-  <Sidebar.Pushable>
+  <Sidebar.Pushable >
     <Sidebar
       as={Menu}
       animation="overlay"
@@ -24,7 +24,7 @@ const NavBarMobile = ({
       onClick={onPusherClick}
       style={{ minHeight: "10vh" }}
     >
-      <Menu fixed="top" >
+      <Menu style= {{ marginBottom: "2em" }} fixed="top" >
         <Menu.Item>
           <Image
             size="mini"

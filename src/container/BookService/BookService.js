@@ -1,5 +1,6 @@
 import React from "react";
 import "./BookService.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import LeftItems from "../../components/LeftItems/LeftItems";
 import RightItems from "../../components/RightItems/RightItems";
@@ -12,8 +13,10 @@ const BookService = () => (
     <div>
     <NavBar LeftItems={LeftItems} RightItems={RightItems} />
     <ServiceChoice/>
-    <MaidForm/>
-    <LawnForm/>
+    <Switch>
+        <Route path="/BookService/MaidForm" component={MaidForm}/>
+        <Route path="/BookService/LawnForm" component={LawnForm}/>
+    </Switch>
     <Footer/>
     </div>
 )

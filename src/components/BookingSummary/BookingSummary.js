@@ -13,11 +13,11 @@ import SegmentGroup, {
 import FormField from "semantic-ui-react";
 
 const BookingSummary = () => (
-  <Container style={{ width: "80%" }}>
-    <Segment.Group>
-      <Segment padded attached size="huge" color="green" inverted as="h1">
+  <Container fluid style={{ width: "80%" }}>
+    <Segment padded textAlign="center" attached size="huge" color="black" inverted as="h1">
         You booked successfully!
-      </Segment>
+    </Segment>
+    <Segment.Group>
       <Segment.Group horizontal>
         <Segment size="large">Transaction #: 34240198850</Segment>
         <Segment size="large">
@@ -29,10 +29,10 @@ const BookingSummary = () => (
           Type: Lawn Services
         </Segment>
         <Segment size="large">Date: September 17, 2018</Segment>
-        <Segment size="large">Time: Morning - 9am-1pm</Segment>
+        <Segment size="large">Time Slot: Morning - 9am-1pm</Segment>
       </Segment.Group>
-      <Container>
-        <Table style={{margin: "5px"}} size="large" columns={2} singleLine>
+      </Segment.Group>
+        <Table unstackable fluid style={{margin: "0px"}}size="large" columns={2} singleLine>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell textAlign="center">Service</Table.HeaderCell>
@@ -64,8 +64,6 @@ const BookingSummary = () => (
             </Table.Row>
           </Table.Body>
         </Table>
-      </Container>
-    </Segment.Group>
   </Container>
 );
 

@@ -5,7 +5,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div>
-      <footer>
+      <footer style={{ marginTop: "2em"}}>
         <h4>
           UpKeep <Icon name="copyright" />2018
              

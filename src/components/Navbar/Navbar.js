@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./NavBar.css";
 import { Responsive } from "semantic-ui-react";
 import NavBarDesktop from "../NavBarDesktop/NavBarDesktop";
 import NavBarMobile from "../NavBarMobile/NavBarMobile";
@@ -22,7 +23,7 @@ class NavBar extends Component {
       const { visible } = this.state;
   
       return (
-        <div>
+        <div className="NavBar">
           <Responsive {...Responsive.onlyMobile}>
             <NavBarMobile
               LeftItems={LeftItems}

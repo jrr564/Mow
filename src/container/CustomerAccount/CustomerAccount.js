@@ -6,11 +6,12 @@ import RightItems from "../../components/RightItems/RightItems";
 import ContractorInfo from "../../components/ContractorInfo/ContractorInfo";
 import ServiceHistory from "../../components/ServiceHistory/ServiceHistory";
 import Footer from "../../components/Footer/Footer";
+import AccountInfo from "../../components/AccountInfo/AccountInfo";
 
 const CustomerAccount = () => (
     <div>
     <NavBar LeftItems={LeftItems} RightItems={RightItems} />
-        <ContractorInfo/>
+        <AccountInfo/>
         <ServiceHistory/>
     <Footer/>
     </div>

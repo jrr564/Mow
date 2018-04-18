@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Icon, Step, Image, Container } from "semantic-ui-react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-export default class SignUpFormStep extends Component {
+export default class SignUpFormStepContractor extends Component {
   state = {};
 
   handleClick = (e, { title }) => this.setState({
@@ -14,16 +14,17 @@ export default class SignUpFormStep extends Component {
     const { form } = this.state;
     return (
       <Container>
-        <Step.Group  fluid attached="top" >
-          <Link to="/SignUpCustomer/SignUpForm1"><Step
+        <Step.Group unstackable size="small" attached="top" widths={3}>
+          <Link to="/SignUpContractor/SignUpForm1"><Step
             active={active === "Email"}
             icon="mail outline"
+            link
             form="Form"
             onClick={this.handleClick}
-            title="Email"
+            title="Email "
             description="Email Address and Password"
           /> </Link>
-          <Link to="/SignUpCustomer/SignUpForm2"><Step
+          <Link to="/SignUpContractor/SignUpForm2"><Step
             active={active === "Home Address"}
             icon="home"
             link
@@ -31,17 +32,16 @@ export default class SignUpFormStep extends Component {
             title="Home Address"
             description="Enter Your Home Address"
           /></Link>
-          <Link to="/SignUpCustomer/SignUpForm3Customer"><Step
-            active={active === "Billing"}
-            icon="credit card"
+          <Link to="/SignUpContractor/SignUpForm3Contractor"><Step
+            active={active === "Banking"}
+            icon="money"
             link
             onClick={this.handleClick}
-            title="Billing"
-            description="Enter billing information"
+            title="Banking"
+            description="Enter Banking information"
           /></Link>  
         </Step.Group>
-
-      </Container>
+        </Container>
     );
   }
 }
