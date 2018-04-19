@@ -1,7 +1,7 @@
 import React from "react";
 import "./BookService.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "../../components/NavBar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import LeftItems from "../../components/LeftItems/LeftItems";
 import RightItems from "../../components/RightItems/RightItems";
 import ServiceChoice from "../../components/ServiceChoice/ServiceChoice"
