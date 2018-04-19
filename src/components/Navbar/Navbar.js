@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "./NavBar.css";
+import "./Navbar.css";
 import { Responsive } from "semantic-ui-react";
 import NavBarDesktop from "../NavBarDesktop/NavBarDesktop";
 import NavBarMobile from "../NavBarMobile/NavBarMobile";
 import NavBarChildren from "../NavBarChildren/NavBarChildren";
 
-class NavBar extends Component {
+class Navbar extends Component {
     state = {
       visible: false
     };
@@ -44,4 +44,4 @@ class NavBar extends Component {
     }
   }
 
-export default NavBar;
+export default Navbar;

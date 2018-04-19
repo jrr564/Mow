@@ -1,6 +1,6 @@
 import React from "react";
 import "./CustomerAccount.css";
-import NavBar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import LeftItems from "../../components/LeftItems/LeftItems";
 import RightItems from "../../components/RightItems/RightItems";
 import ContractorInfo from "../../components/ContractorInfo/ContractorInfo";
@@ -10,7 +10,7 @@ import AccountInfo from "../../components/AccountInfo/AccountInfo";
 
 const CustomerAccount = () => (
     <div>
-    <NavBar LeftItems={LeftItems} RightItems={RightItems} />
+    <Navbar LeftItems={LeftItems} RightItems={RightItems} />
         <AccountInfo/>
         <ServiceHistory/>
     <Footer/>

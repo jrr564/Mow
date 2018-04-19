@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./LandingPageCustomer.css";
 import { Button, Container, Segment, Link  } from "semantic-ui-react";
-import NavBar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import RightItems from "../../components/RightItems/RightItems";
 import Footer from "../../components/Footer/Footer";
 
@@ -15,7 +15,7 @@ class LandingPageCustomer extends React.Component {
   render() {
       return(
         <Container>
-        <NavBar RightItems={RightItems} />
+        <Navbar RightItems={RightItems} />
         <Segment style={{ height: "400px" }}>
 <Button onClick={this.goToSignup} inverted color="green">
             SignUp

@@ -1,6 +1,6 @@
 import React from "react";
 import "./SignUpContractor.css";
-import NavBar from "../../components/NavBar/NavBar";
+import Navbar from "../../components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
 import LeftItems from "../../components/LeftItems/LeftItems";
@@ -13,7 +13,7 @@ import Footer from "../../components/Footer/Footer";
 
 const SignUpContractor = () => (
   <div>
-    <NavBar LeftItems={LeftItems} RightItems={RightItems} />
+    <Navbar LeftItems={LeftItems} RightItems={RightItems} />
     <Container fluid>
       <SignUpFormStepContractor />
       <Switch>

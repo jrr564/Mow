@@ -1,6 +1,8 @@
 import _ from "lodash";
 import React from "react";
 import "./NavBarDesktop.css";
+import LeftItems from "../../components/LeftItems/LeftItems";
+import RightItems from "../../components/RightItems/RightItems";
 import { Image, Menu } from "semantic-ui-react";
 import { BrowserRouter as Link } from "react-router-dom";
 
