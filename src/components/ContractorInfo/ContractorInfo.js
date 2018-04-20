@@ -13,7 +13,7 @@ const ContractorInfo = () => (
   <Container style={{ width: "60%" }}>
     <Segment.Group>
       <Segment as="h1" size="huge" textAlign='center'>
-      <Icon name="id card"/>Account Information
+      Account Information <Icon name="id card"/>
       </Segment>
       <Segment.Group horizontal>
         <Segment>
