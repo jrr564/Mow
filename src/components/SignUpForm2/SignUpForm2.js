@@ -122,7 +122,7 @@ class SignUpForm2 extends Component {
               <Grid.Column />
               <Grid.Column />
               <Grid.Column>
-                <Button fluid size="big" type="submit">
+                <Button fluid size="large" type="submit">
                   Next <Icon name="right arrow" />
                 </Button>
               </Grid.Column>

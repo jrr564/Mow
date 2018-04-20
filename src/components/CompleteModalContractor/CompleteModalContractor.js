@@ -13,7 +13,7 @@ import {
 const CompleteModalContractor = () => (
   <Modal
     textAlign="center"
-    trigger={<Button size="small">Complete
+    trigger={<Button size="large">Complete
     </Button>}
   >
     <Modal.Content image>

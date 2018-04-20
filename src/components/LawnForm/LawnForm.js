@@ -87,11 +87,13 @@ class LawnForm extends React.Component {
       <div>
         <Container style={{ width: "80%", margin: "30px" }}>
           <Form size="huge">
-            <Header textAlign="center" inverted color="green">
+            <Header style={{ background: "#8ef0a8", padded: "30px 10px"}} textAlign="center">
               Lawn Service
             </Header>
-            <Form.Group grouped>
-              <Form.Field>
+            <Grid columns="equal">
+            <Grid.Column>
+            <Form.Group inverted grouped>
+              <Form.Field inverted>
                 <label>Month</label>
                 <MonthDropdown />
               </Form.Field>
@@ -114,6 +116,8 @@ class LawnForm extends React.Component {
                 <TimeSlotSelection size="huge" />
               </Form.Field>
             </Form.Group>
+            </Grid.Column>
+            <Grid.Column>
             <Form.Group grouped>
               <Form.Field inline>
                 <label>Add Ons (Extra Charges Apply)</label>
@@ -126,20 +130,22 @@ class LawnForm extends React.Component {
                 />
               </Form.Field>
             </Form.Group>
-
+            </Grid.Column>
+            </Grid>
             <Grid columns="equal">
               <Grid.Column />
               <Grid.Column>
-                  <Button 
-                    onClick={this.goToSignup} 
-                      color="green" 
-                      size="huge" 
-                      type="submit"
-                    >
-                    Schedule Booking
-                  </Button>
+                <Button
+                  onClick={this.goToSignup}
+                  color="black"
+                  bold
+                  size="large"
+                  type="submit"
+                >
+                  Schedule Booking
+                </Button>
               </Grid.Column>
-              <Grid.Column />
+              
             </Grid>
           </Form>
         </Container>
