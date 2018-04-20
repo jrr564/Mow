@@ -8,6 +8,7 @@ export default class MaidAddOns extends Component {
   render() {
     return (
       <Form.Group grouped>
+      <br/>
         <Form.Field 
           label="Number of Bedrooms"
           control="input"
@@ -44,7 +45,7 @@ export default class MaidAddOns extends Component {
           name="carpetClean"
           defaultChecked={false}  
           value={this.props.carpetClean} 
-          onClick={this.props.handleCarpetClean}
+          onClick={this.props.handleChildCheckbox}
         />
         <Form.Field 
           label="Deep Oven Clean" 
@@ -53,7 +54,7 @@ export default class MaidAddOns extends Component {
           name="ovenClean"        
           defaultChecked={false}  
           value={this.props.ovenClean}
-          onClick={this.props.handleOvenClean}  
+          onClick={this.props.handleChildCheckbox}  
         />
         <Form.Field 
           label="Hardwood Floor Clean" 
@@ -62,7 +63,7 @@ export default class MaidAddOns extends Component {
           name="woodFloorClean"
           defaultChecked={false}  
           value={this.props.woodFloorClean}
-          onChange={this.props.handleWoodFloorClean}
+          onChange={this.props.handleChildCheckbox}
         />
         <Form.Field 
           label="Laundry" 
@@ -71,7 +72,7 @@ export default class MaidAddOns extends Component {
           name="laundry"
           defaultChecked={false}  
           value={this.props.laundry}
-          onClick={this.props.handleLaundry}
+          onClick={this.props.handleChildCheckbox}
         />
         <Form.Field 
           label="Window Clean" 
@@ -80,7 +81,7 @@ export default class MaidAddOns extends Component {
           name="windowClean"
           defaultChecked={false}  
           value={this.props.windowClean}
-          onClick={this.props.handleWindowClean}
+          onClick={this.props.handleChildCheckbox}
         />
 
       </Form.Group>

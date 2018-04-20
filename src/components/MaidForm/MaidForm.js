@@ -16,6 +16,8 @@ import { BrowserRouter as Link } from "react-router-dom";
 
 class MaidForm extends React.Component {
   state = {
+    month: "",
+    date: [],
     bedrooms: [],
     bathrooms: [],
     halfbaths: [],
@@ -27,6 +29,11 @@ class MaidForm extends React.Component {
     laundry: true,
     windowClean: true,
   }
+
+  handleMonthsChange = e => {
+
+  }
+
   
   handleChildChange = e => {
     // updates the input values on the MaidAddOns Form
@@ -35,48 +42,32 @@ class MaidForm extends React.Component {
     this.setState({ [name]: value });
     console.log("Handle Input Changes: " + name + " = " + value);
   }
-
-  //update the checkbox inputs on the MaidAddOns Form
-  handleCarpetClean = () => {
+  handleChildCheckbox = e => {
+    // updates the checkboxes in the MaidAddOns Form
+    const name = e.target.name;
+    
     this.setState({
-      carpetClean: !this.state.carpetClean
-    });
-    console.log("Carpet clean: " + this.state.carpetClean);
-  }
-  handleOvenClean = () => {
-    this.setState({
-      ovenClean: !this.state.ovenClean
-    });
-    console.log("Oven Clean: " + this.state.ovenClean);
-  }
-  handleWoodFloorClean = () => {
-    this.setState({
-      woodFloorClean: !this.state.woodFloorClean
-    });
-    console.log("Wood Floor Clean: " + this.state.woodFloorClean);
-  }
-  handleLaundry = () => {
-    this.setState({
-      laundry: !this.state.laundry
-    });
-    console.log("Laundry: " + this.state.laundry);
-  }
-  handleWindowClean = () => {
-    this.setState({
-      windowClean: !this.state.windowClean
-    });
-    console.log("Window Clean: " + this.state.windowClean);
+      [name]: !this.state[name]
+    })
+    console.log("NAME: " + name + "  ||  VALUE: " + this.state[name]);
   }
 
 
 
   calculateMaidCost = () => {
+    const maidCost = this.state.maidCost
     const bedrooms = this.state.bedrooms;
     const bathrooms = this.state.bathrooms;
     const halfbaths = this.state.bathrooms;
+
+    var newCost = maidCost.slice();
+    newCost.push(bedrooms);
+    this.setState({ maidCost:newCost })    
+    console.log("Maid Cost " + maidCost)
   }
 
   goToSignup = event => {
+    // this.calculateMaidCost();
     this.props.history.push(`/SuccessBooking`);
   } 
   render() {
@@ -90,7 +81,10 @@ class MaidForm extends React.Component {
         <Form.Group grouped>
           <Form.Field>
             <label>Month</label>
-            <MonthDropdown />
+            <MonthDropdown 
+              month={this.state.month}
+              handleMonthsChange={this.handleMonthsChange}
+            />
           </Form.Field>
           <Form.Field>
             <label>Date</label>
@@ -117,23 +111,24 @@ class MaidForm extends React.Component {
 
               handleChildChange={this.handleChildChange}
 
-              handleCheckBox={this.handleCheckBox}
+              handleChildCheckbox={this.handleChildCheckbox}
 
               handleCarpetClean={this.handleCarpetClean}
               handleOvenClean={this.handleOvenClean}
               handleWoodFloorClean={this.handleWoodFloorClean}
               handleLaundry={this.handleLaundry}
               handleWindowClean={this.handleWindowClean}
-
-              initialChecked={this.state.carpetClean}
-              callbackParent={this.onChildBoxChange}
             />
           </Form.Field>
         </Form.Group>
         <Grid columns="equal">
           <Grid.Column />
           <Grid.Column>
-              <Button onClick={this.goToSignup} color="blue" bold size="huge" type="submit">
+              <Button   
+                onClick={this.goToSignup} 
+                color="blue"  
+                size="huge" 
+                type="submit">
                 Schedule Booking
               </Button>
           </Grid.Column>

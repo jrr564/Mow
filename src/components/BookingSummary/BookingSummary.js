@@ -24,7 +24,7 @@ const BookingSummary = () => (
           Service Provider: Frank and Antoine Mowing
         </Segment>
       </Segment.Group>
-      <Segment.Group attached horizontal>
+      <Segment.Group attached="true" horizontal>
         <Segment size="large">
           Type: Lawn Services
         </Segment>
