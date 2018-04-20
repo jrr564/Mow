@@ -57,7 +57,10 @@ class LawnForm extends React.Component {
         console.log(this.state.lotsize);
         this.getPricing();
         // allows the API to finish before routing. 
-        this.props.history.push(`/SuccessBooking`);
+        this.props.history.push({
+          pathname: `/SuccessBooking`,
+          query: this.state.location.query
+        });
       })
   }
 
@@ -76,13 +79,10 @@ class LawnForm extends React.Component {
   goToSignup = event => {
     event.preventDefault();
     this.callAPI();
-    // this.props.history.push(`/SuccessBooking`);
+    // this.props.history.push(`/SuccessBooking`);   //move to callAPI for sync issues
   };
 
   render() {
-    // if (this.state.allowNextRoute === true) {
-    //   return <Redirect to='/SuccessBooking' />
-    // }
     return (
       <div>
         <Container style={{ width: "80%", margin: "30px" }}>

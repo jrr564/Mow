@@ -108,16 +108,8 @@ class MaidForm extends React.Component {
               woodFloorClean={this.state.woodFloorClean}
               laundry={this.state.laundry}
               windowClean={this.state.windowClean}
-
               handleChildChange={this.handleChildChange}
-
               handleChildCheckbox={this.handleChildCheckbox}
-
-              handleCarpetClean={this.handleCarpetClean}
-              handleOvenClean={this.handleOvenClean}
-              handleWoodFloorClean={this.handleWoodFloorClean}
-              handleLaundry={this.handleLaundry}
-              handleWindowClean={this.handleWindowClean}
             />
           </Form.Field>
         </Form.Group>
