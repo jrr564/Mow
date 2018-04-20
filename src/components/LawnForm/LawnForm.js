@@ -16,6 +16,23 @@ import LawnAddOns from "../LawnAddOns/LawnAddOns";
 import { BrowserRouter as Link } from "react-router-dom";
 
 class LawnForm extends React.Component {
+  state = {
+    month: "",
+    date: [],
+    treeTrimming: true,
+    fertilizer: true,
+    hedging: true,
+  }
+
+  handleCheckbox = e => {
+    const name = e.target.name;
+
+    this.setState({
+      [name]: !this.state[name]
+    });
+    console.log("NAME: " + name + "  ||  VALUE: " + this.state[name]);
+  }
+
   goToSignup = event => {
     this.props.history.push(`/SuccessBooking`);
   };
@@ -44,14 +61,20 @@ class LawnForm extends React.Component {
             <Form.Group grouped>
               <Form.Field inline>
                 <label>Add Ons (Extra Charges Apply)</label>
-                <LawnAddOns size="huge" />
+                <LawnAddOns 
+                  size="huge" 
+                  treeTrimming={this.state.treeTrimming}
+                  fertilizer={this.state.fertilizer}
+                  hedging={this.state.hedging}
+                  handleCheckbox={this.handleCheckbox}
+                />
               </Form.Field>
             </Form.Group>
 
             <Grid columns="equal">
               <Grid.Column />
               <Grid.Column>
-                  <Button onClick={this.goToSignup} color="green" bold size="huge" type="submit">
+                  <Button onClick={this.goToSignup} color="green" size="huge" type="submit">
                     Schedule Booking
                   </Button>
               </Grid.Column>
