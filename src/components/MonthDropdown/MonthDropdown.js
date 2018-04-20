@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { Component } from "react";
+// import React from 'react';
 import { Dropdown } from 'semantic-ui-react'
 
 const months = [
@@ -17,8 +18,30 @@ const months = [
  
 ]
 
-const MonthDropdown = () => (
-  <Dropdown placeholder='Month' fluid selection options={months} />
-)
+class MonthDropdown extends React.Component {
 
-export default MonthDropdown
+  
+  findMonth(data) {
+    const monthNum = data.value - 1;
+    const monthKey = data.options[monthNum].key
+    console.log(monthKey);
+  
+  }
+  
+  render() {
+    return (
+      <Dropdown 
+        placeholder='Month' 
+        fluid selection options={months}
+        // value={this.props.month} 
+        // onChange={this.props.handleMonthsChange}
+        onChange = { (event, data) => {
+          this.findMonth(data);
+        }}
+      />
+    )
+  }
+  
+}
+  export default MonthDropdown
+  

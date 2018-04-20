@@ -9,7 +9,7 @@ class Navbar extends Component {
     state = {
       visible: false
     };
-  
+  //
     handlePusher = () => {
       const { visible } = this.state;
   
