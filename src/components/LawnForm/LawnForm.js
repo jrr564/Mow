@@ -13,7 +13,9 @@ import TimeSlotSelection from "../TimeSlotSelection/TimeSlotSelection";
 import MonthDropdown from "../MonthDropdown/MonthDropdown";
 import DayDropdown from "../DayDropdown/DayDropdown";
 import LawnAddOns from "../LawnAddOns/LawnAddOns";
+import AddressForm from "../AddressForm/AddressForm";
 import { BrowserRouter as Link } from "react-router-dom";
+import axios from "axios";
 
 class LawnForm extends React.Component {
   state = {
@@ -22,7 +24,12 @@ class LawnForm extends React.Component {
     treeTrimming: true,
     fertilizer: true,
     hedging: true,
-  }
+    lotsize: "",
+    address: "",
+    city: "",
+    state: "",
+  };
+
 
   handleCheckbox = e => {
     const name = e.target.name;
@@ -33,10 +40,49 @@ class LawnForm extends React.Component {
     console.log("NAME: " + name + "  ||  VALUE: " + this.state[name]);
   }
 
+
+  callAPI = () => {
+    const config = {
+      headers: {  //move to gitignore
+          'Accept': 'application/json',
+          'apikey': '9d078487e223b1c4d54c3f3a3f628803'
+      }
+    };
+    const addressURI = encodeURI(this.state.address);
+    const url = "https://search.onboard-apis.com/propertyapi/v1.0.0/property/detail?" + "address1=" + addressURI + "&address2=" + this.state.city + "%2C%20" + this.state.state;
+
+    axios.get(url, config)
+      .then(response => {
+        this.setState({ lotsize: response.data.property[0].lot.lotsize1})
+        console.log(this.state.lotsize);
+        this.getPricing();
+        // allows the API to finish before routing. 
+        this.props.history.push(`/SuccessBooking`);
+      })
+  }
+
+  getPricing = () => {
+    console.log(this.state.lotsize);
+  }
+
+
+  hanleAddressInput = e => {
+    const name = e.target.name;
+    let value = e.target.value;
+    this.setState({ [name]: value })
+  }
+
+
   goToSignup = event => {
-    this.props.history.push(`/SuccessBooking`);
+    event.preventDefault();
+    this.callAPI();
+    // this.props.history.push(`/SuccessBooking`);
   };
+
   render() {
+    // if (this.state.allowNextRoute === true) {
+    //   return <Redirect to='/SuccessBooking' />
+    // }
     return (
       <div>
         <Container style={{ width: "80%", margin: "30px" }}>
@@ -52,6 +98,16 @@ class LawnForm extends React.Component {
               <Form.Field>
                 <label>Date</label>
                 <DayDropdown />
+              </Form.Field>
+              <Form.Field>
+                <label>Enter Address</label>
+                <AddressForm 
+                  address={this.state.address}
+                  city={this.state.city}
+                  state={this.state.state}
+                  handleAddress={this.handleAddress}
+                  hanleAddressInput={this.hanleAddressInput}
+                />
               </Form.Field>
               <Form.Field>
                 <label>Select Time Slot</label>
@@ -74,7 +130,12 @@ class LawnForm extends React.Component {
             <Grid columns="equal">
               <Grid.Column />
               <Grid.Column>
-                  <Button onClick={this.goToSignup} color="green" size="huge" type="submit">
+                  <Button 
+                    onClick={this.goToSignup} 
+                      color="green" 
+                      size="huge" 
+                      type="submit"
+                    >
                     Schedule Booking
                   </Button>
               </Grid.Column>
