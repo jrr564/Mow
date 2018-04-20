@@ -12,7 +12,7 @@ import Footer from "../../components/Footer/Footer";
 
 const SignUpCustomer = () => (
   <div>
-    <Navbar LeftItems={LeftItems} RightItems={RightItems} />
+    <Navbar RightItems={RightItems} />
     <SignUpFormStep />
     <Switch>
       <Route path="/SignUpCustomer/SignUpForm1" component={SignUpForm1} />

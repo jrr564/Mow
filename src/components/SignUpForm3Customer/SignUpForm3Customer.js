@@ -79,7 +79,7 @@ class SignUpForm3Customer extends Component {
                 fluid
                 padded
                 className="centered"
-                size="big"
+                size="large"
                 type="submit"
               >
                 Submit

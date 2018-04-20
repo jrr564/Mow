@@ -21,7 +21,7 @@ class SignUpForm1 extends Component {
     const { email, password } = this.state;
 
     return (
-      <Container>
+      <Container attached="top">
          <Segment style={{ padding: "2em 4em 2em 4em" }}>
           <Form size="large">
             <Form.Input
@@ -43,7 +43,7 @@ class SignUpForm1 extends Component {
               <Grid.Column>
                 <Button
                 
-                  size="big"
+                  size="large"
                   type="submit"
                 > Create Account
                 </Button>

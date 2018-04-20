@@ -14,7 +14,6 @@ import Footer from "../../components/Footer/Footer";
 const SignUpContractor = () => (
   <div>
     <Navbar LeftItems={LeftItems} RightItems={RightItems} />
-    <Container fluid>
       <SignUpFormStepContractor />
       <Switch>
         <Route path="/SignUpContractor/SignUpForm1" component={SignUpForm1} />
@@ -24,7 +23,6 @@ const SignUpContractor = () => (
           component={SignUpForm3Contractor}
         />
       </Switch>
-    </Container>
     <Footer />
   </div>
 );

@@ -1,28 +1,44 @@
-.App {
+.ui.header, .description, a, .label::before, .header, label, .button, footer, button, h1, h2, button {
+  font-family: Helvetica, sans-serif !important;
+  border-radius: 0px !important;
+  letter-spacing: 2px !important;
+  font-weight: 300 !important;
+} 
+.segment, .segments {
+  border-radius: 0px !important;
+}
+
+.title{
+  font-family: Helvetica, sans-serif !important;
+  border-radius: 0px !important;
+  letter-spacing: 2px !important;
+  font-weight: 800 !important;
+}
+
+label {
+  font-family: Helvetica, sans-serif !important;
+}
+
+.segment, body, .container, .form {
+  border-radius: 0px !important;
+}
+
+footer {
+  background-color: #5bbd79;
+  position: relative;
+  margin-top: -200px;
+  height: 200px;
+  clear: both;
+  color: black;
+}
+
+h1 {
+  font-size: 30px !important
+}
+
+.header{
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  color: black;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }

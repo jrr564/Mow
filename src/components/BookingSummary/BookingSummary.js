@@ -13,7 +13,7 @@ import SegmentGroup, {
 import FormField from "semantic-ui-react";
 
 const BookingSummary = () => (
-  <Container fluid style={{ width: "80%" }}>
+  <Container fluid style={{ width: "80%", margin: "100px 20px 200px" }}>
     <Segment padded textAlign="center" attached size="huge" color="black" inverted as="h1">
         You booked successfully!
     </Segment>

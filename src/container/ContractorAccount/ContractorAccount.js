@@ -10,8 +10,10 @@ import Footer from "../../components/Footer/Footer";
 const ContractorAccount = () => (
   <div>
     <Navbar LeftItems={LeftItems} RightItems={RightItems} />
+    <div class="content">
     <ContractorInfo />
     <WorkSummary />
+    </div>
     <Footer />
   </div>
 );
