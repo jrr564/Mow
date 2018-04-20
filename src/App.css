@@ -33,12 +33,24 @@ footer {
 }
 
 h1 {
-  font-size: 30px !important
+  font-size: 24px !important
 }
 
 .header{
   text-align: center;
   color: black;
-  padding-top: 15px !important;
-  padding-bottom: 15px !important;
+}
+
+.SignInTitle {
+  position: relative !important;
+  color: white !important;
+  width: 100% !important;
+  background: yellowgreen !important;
+  font-size: 80% !important;
+  font-weight: 900 !important;
+  height: 140px !important;
+  margin-top: 0px !important;
+  text-align: right !important;
+  padding-right: 20% !important;
+  padding-top: 30px !important;
 }

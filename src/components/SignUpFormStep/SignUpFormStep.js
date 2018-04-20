@@ -14,7 +14,7 @@ export default class SignUpFormStep extends Component {
     const { active } = this.state;
     const { form } = this.state;
     return (
-      <Container attached style={{ margin: "80px 20px 20px" }}>
+      <Container attached style={{ margin: "40px 20px 20px" }}>
         <Step.Group
           unstackable
           attached

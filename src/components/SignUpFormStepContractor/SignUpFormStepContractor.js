@@ -60,7 +60,7 @@ export default class SignUpFormStep extends Component {
               </Step.Content>
             </Step>
           </Link>
-          <Link to="/SignUpCustomer/SignUpForm3Customer">
+          <Link to="/SignUpCustomer/SignUpForm3Contractor">
             <Step
               active={active === "Banking"}
               form="Form"

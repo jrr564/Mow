@@ -23,10 +23,10 @@ class SignInForm extends React.Component {
     const { email, password } = this.state;
 
     return (
-      <div style={{ margin: "50px 60px 40px" }}>
-        <Container>
-          <Segment attached style={{ background: "whitesmoke" }} padded fluid size="huge" textAlign="center" as="h1">
-            Welcome to UpKeep
+      <div style={{ margin: "40px 60px 40px" }}>
+        <Container style={{width: "90%"}}>
+          <Segment attached style={{ background: "whitesmoke" }} fluid size="big" textAlign="center" as="h1">
+            Log-In
           </Segment>
           <Segment attached style={{ padding: "2em 8em 2em 8em" }}>
             <Form onSubmit={this.goToAccount} size="large">
