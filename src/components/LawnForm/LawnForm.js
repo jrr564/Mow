@@ -102,6 +102,9 @@ class LawnForm extends React.Component {
                 <DayDropdown />
               </Form.Field>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 712bb31026d995ea15f5d20d228c5599f37862b6
               <Form.Field>
                 <label>Enter Address</label>
                 <AddressForm 
@@ -114,10 +117,13 @@ class LawnForm extends React.Component {
               </Form.Field>
               <Form.Field>
                 <label>Select Time Slot</label>
+<<<<<<< HEAD
 =======
               <Form.Field style={{textAlign: "center"}}>
                 <label  >Select Time Slot</label>
 >>>>>>> color-style
+=======
+>>>>>>> 712bb31026d995ea15f5d20d228c5599f37862b6
                 <TimeSlotSelection size="huge" />
               </Form.Field>
             </Form.Group>
@@ -141,6 +147,7 @@ class LawnForm extends React.Component {
               <Grid.Column />
               <Grid.Column>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <Button 
                     onClick={this.goToSignup} 
                       color="green" 
@@ -150,6 +157,8 @@ class LawnForm extends React.Component {
                     Schedule Booking
                   </Button>
 =======
+=======
+>>>>>>> 712bb31026d995ea15f5d20d228c5599f37862b6
                 <Button
                   onClick={this.goToSignup}
                   color="black"
@@ -159,7 +168,10 @@ class LawnForm extends React.Component {
                 >
                   Schedule Booking
                 </Button>
+<<<<<<< HEAD
 >>>>>>> color-style
+=======
+>>>>>>> 712bb31026d995ea15f5d20d228c5599f37862b6
               </Grid.Column>
               
             </Grid>

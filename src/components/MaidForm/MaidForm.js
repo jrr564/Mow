@@ -70,6 +70,62 @@ class MaidForm extends React.Component {
     // this.calculateMaidCost();
     this.props.history.push(`/SuccessBooking`);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  };
+  render() {
+    return (
+      <div>
+        <Container style={{ width: "80%", margin: "30px" }}>
+          <Form size="huge">
+            <Header style={{ background: "#bec5fb", padded: "30px 10px"}} textAlign="center">Cleaning Service</Header>
+            <Grid columns="equal">
+              <Grid.Column>
+                <Form.Group inverted grouped>
+                  <Form.Field inverted>
+                    <label>Month</label>
+                    <MonthDropdown />
+                  </Form.Field>
+                  <Form.Field>
+                    <label>Date</label>
+                    <DayDropdown />
+                  </Form.Field>
+                  <Form.Field style={{ textAlign: "center" }}>
+                    <label>Select Time Slot</label>
+                    <TimeSlotSelection size="huge" />
+                  </Form.Field>
+                </Form.Group>
+              </Grid.Column>
+              <Grid.Column>
+                <Form.Group grouped>
+                  <Form.Field inline>
+                    <label>Add Ons (Extra Charges Apply)</label>
+                    <MaidAddOns size="huge" />
+                  </Form.Field>
+                </Form.Group>
+              </Grid.Column>
+            </Grid>
+            <Grid columns="equal">
+              <Grid.Column />
+              <Grid.Column>
+                <Button
+                  onClick={this.goToSignup}
+                  color="black"
+                  bold
+                  size="large"
+                  type="submit"
+                >
+                  Schedule Booking
+                </Button>
+              </Grid.Column>
+              
+            </Grid>
+          </Form>
+        </Container>
+      </div>
+    );
+=======
+>>>>>>> 712bb31026d995ea15f5d20d228c5599f37862b6
   } 
   render() {
     return(
@@ -139,6 +195,7 @@ class MaidForm extends React.Component {
     </Container>
   </div>
     )
+<<<<<<< HEAD
 =======
   };
   render() {
@@ -193,6 +250,8 @@ class MaidForm extends React.Component {
       </div>
     );
 >>>>>>> color-style
+=======
+>>>>>>> 712bb31026d995ea15f5d20d228c5599f37862b6
   }
 }
 
