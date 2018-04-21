@@ -43,7 +43,7 @@ export default class MaidAddOns extends Component {
           control="input" 
           type="checkbox" 
           name="carpetClean"
-          defaultChecked={false}  
+          // defaultChecked={false}  
           value={this.props.carpetClean} 
           onClick={this.props.handleChildCheckbox}
         />

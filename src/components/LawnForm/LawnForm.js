@@ -32,11 +32,8 @@ class LawnForm extends React.Component {
 
   handleCheckbox = e => {
     const name = e.target.name;
-
-    this.setState({
-      [name]: !this.state[name]
-    });
-    console.log("NAME: " + name + "  ||  VALUE: " + this.state[name]);
+    this.setState({ [name]: !this.state[name] });
+    // console.log("NAME: " + name + "  ||  VALUE: " + this.state[name]);
   };
 
   callAPI = () => {
@@ -60,14 +57,31 @@ class LawnForm extends React.Component {
     axios.get(url, config).then(response => {
       this.setState({ lotsize: response.data.property[0].lot.lotsize1 });
       console.log(this.state.lotsize);
-      this.getPricing();
+      this.calculateLawnCost();
       // allows the API to finish before routing.
       this.props.history.push(`/SuccessBooking`);
     });
   };
 
-  getPricing = () => {
+  getValue = state => {
+    if (state) {return 10} else {return 0}
+  }
+
+  calculateLawnCost = () => {
     console.log(this.state.lotsize);
+    const startingRate = 15;
+    const lotsize = this.state.lotsize;
+    const treeTrimming = this.state.treeTrimming;
+    const fertilizer = this.state.fertilizer;
+    const hedging = this.state.hedging;
+    const calcTreeTrimming = this.getValue(treeTrimming);
+    const calcFertilizer = this.getValue(fertilizer);
+    const calcHedging = this.getValue(hedging);
+    // const calcLotSize = lotsize
+    
+    console.log("Street: " + this.state.address + "\n"
+                + "City: " + this.state.city + "\n"
+                + "State: " + this.state.state);
   };
 
   hanleAddressInput = e => {
@@ -79,15 +93,15 @@ class LawnForm extends React.Component {
   goToSignup = event => {
     event.preventDefault();
     this.callAPI();
-    // this.props.history.push(`/SuccessBooking`);
+    // this.props.history.push(`/SuccessBooking`);   //move to callAPI for sync issues
   };
 
+  hanglePageChange = e => {
+    console.log("++++++++++++++++++++++++++++  PAGE UPDATE  ++++++++++++++++++++++++++++");
+  }
   render() {
-    // if (this.state.allowNextRoute === true) {
-    //   return <Redirect to='/SuccessBooking' />
-    // }
     return (
-      <div>
+      <div onChange={this.hanglePageChange}>
         <Container style={{ width: "80%", margin: "30px" }}>
           <Form size="huge">
             <Header
@@ -96,6 +110,14 @@ class LawnForm extends React.Component {
             >
               Lawn Service
             </Header>
+            <AddressForm 
+              address={this.state.address}
+              city={this.state.city}
+              state={this.state.state}
+              hanleAddressInput={this.hanleAddressInput}
+            >
+              Enter Address
+            </AddressForm>
             <Grid columns="equal">
               <Grid.Column>
                 <Form.Group inverted grouped>
