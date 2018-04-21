@@ -5,10 +5,10 @@ import SignInForm from "../../components/SignInForm/SignInForm";
 import Footer from "../../components/Footer/Footer";
 import { Image } from "semantic-ui-react";
 
+
 const SignIn = () => (
   <div>
-    <div className="SignInTitle">
-    </div>
+     <Navbar />
     <div >
       <SignInForm />
     </div>
