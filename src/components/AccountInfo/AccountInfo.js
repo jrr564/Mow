@@ -12,9 +12,9 @@ import SegmentGroup, {
 class AccountInfo extends React.Component {
   render() {
     return (
-      <Container style={{ width: "60%", margin: "40px" }}>
+      <Container style={{ margin: "80px 20px 20px" }}>
         <Segment.Group>
-        <Segment as="h1" size="huge" textAlign='center'>
+        <Segment style={{background: "whitesmoke"}} as="h1" size="huge" textAlign='center'>
         <Icon name="id card"/>Account Information
       </Segment>
           <Segment.Group horizontal>

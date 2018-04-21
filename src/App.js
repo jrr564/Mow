@@ -19,6 +19,7 @@ import SuccessBooking from "./container/SuccessBooking/SuccessBooking";
 import SignUpContractor from "./container/SignUpContractor/SignUpContractor";
 import SignUpCustomer from "./container/SignUpCustomer/SignUpCustomer";
 import LandingPageCustomer from "./container/LandingPageCustomer/LandingPageCustomer";
+import SignIn from "./container/SignIn/SignIn";
 
 const App = () => (
   <Router>
@@ -28,8 +29,9 @@ const App = () => (
         <Route exact path="/BookService" component={BookService} />
         <Route path="/BookService/" component={BookService} />
         <Route exact path="/ContractorAccount" component={ContractorAccount} />
-        <Route exact path="/CustomerAccount" component={CustomerAccount} />
-        <Route exact path="/SignUpCustomer/SignUpForm1" component={SignUpCustomer} />
+        <Route path="/CustomerAccount" component={CustomerAccount} />
+        <Route path="/SignIn" component={SignIn} />
+        <Route exact path="/SignUpCustomer" component={SignUpCustomer} />
         <Route path="/SignUpCustomer/:form" component={SignUpCustomer} />
         <Route exact path="/SignUpContractor" component={SignUpContractor} />
         <Route path="/SignUpContractor/:form" component={SignUpContractor} />

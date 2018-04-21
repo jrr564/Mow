@@ -1,5 +1,9 @@
-import React from 'react'
+import React, { Component } from "react";
+// import React from 'react'
 import { Dropdown } from 'semantic-ui-react'
+  
+
+
 
 const months = [
   { key: '1', text: '1', value: '01' },
@@ -33,12 +37,46 @@ const months = [
   { key: '29', text: '29', value: '29' },
   { key: '30', text: '30', value: '30' },
   { key: '31', text: '31', value: '01' },
-
- 
 ]
 
-const DayDropdown = () => (
-  <Dropdown placeholder='Date' fluid selection options={months} />
-)
+class DayDropdown extends React.Component {
+  
+  
+  fetchDate(data) {
+    const datePick = data.value;
+    console.log(datePick);
+    return datePick;
+
+  } 
+
+  componentDidUpdate = () => {
+    console.log("DayDropDown componentDidUpdate")
+  }
+  componentDidCatch = () => {
+    console.log("DayDropDown componentDidCatch")
+  }
+  componentDidMount = () => {
+    console.log("DayDropDown componentDidMount")
+  }
+
+  render() {
+    return(
+      <Dropdown 
+        placeholder='Date' 
+        fluid selection options={months} 
+        ref={this.dayInput}
+        // value={this.props.day}
+        name={this.fetchDate}
+        // onChange= {( event, data ) => {
+        //   const day = data.value;
+        //   this.props.handleDayPick
+        //   this.fetchDate(data)
+        // }}
+        onChange={( this.props.handleDayPick )}
+        // onChange={ (e) => this.props.handleDayPick(e)}
+      />
+    )
+  }
+}
 
 export default DayDropdown

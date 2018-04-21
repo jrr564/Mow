@@ -13,7 +13,7 @@ import {
 const ServiceReviewModalCustomer = () => (
   <Modal
     textAlign="center"
-    trigger={<Button size="huge">Review Service</Button>}
+    trigger={<Button size="medium">Review</Button>}
   >
     <Modal.Content image>
       <Modal.Description textAlign="center">

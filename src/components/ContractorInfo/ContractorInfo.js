@@ -13,7 +13,7 @@ const ContractorInfo = () => (
   <Container style={{ width: "60%" }}>
     <Segment.Group>
       <Segment as="h1" size="huge" textAlign='center'>
-      <Icon name="id card"/>Account Information
+      Account Information <Icon name="id card"/>
       </Segment>
       <Segment.Group horizontal>
         <Segment>
@@ -54,7 +54,7 @@ const ContractorInfo = () => (
           <Header size="tiny">YTD Gross</Header> $$$$$
         </Segment>
         <Segment>
-          <Link to="/SignUpCustomer/SignUpForm2">
+          <Link to="/SignUpContractor/SignUpForm2">
             <Button fluid>Edit Information</Button>
           </Link>
         </Segment>

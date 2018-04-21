@@ -6,14 +6,14 @@ const Footer = () => {
   return (
     <div>
       <footer style={{ marginTop: "2em"}}>
-        <h4>
+        <h3 style={{padding: "10px"}}>
           UpKeep <Icon name="copyright" />2018
              
           <Icon name="facebook official" />
           <Icon name="twitter" />
           <Icon name="github" />
           <Icon name="facebook official" />
-        </h4>
+        </h3>
       </footer>
     </div>
   );

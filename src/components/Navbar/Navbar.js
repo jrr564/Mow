@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import "./Navbar.css";
 import { Responsive } from "semantic-ui-react";
 import NavBarDesktop from "../NavBarDesktop/NavBarDesktop";
-import NavBarMobile from "../NavBarMobile/NavBarMobile";
+import NavBarMobile from "../NavBarMobile/NavbarMobile";
 import NavBarChildren from "../NavBarChildren/NavBarChildren";
 
 class Navbar extends Component {
     state = {
       visible: false
     };
-  
+  //
     handlePusher = () => {
       const { visible } = this.state;
   

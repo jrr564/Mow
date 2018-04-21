@@ -10,21 +10,7 @@ const NavBarMobile = ({
   RightItems,
   visible
 }) => (
-  <Sidebar.Pushable >
-    <Sidebar
-      as={Menu}
-      animation="overlay"
-      icon="labeled"
-      items={LeftItems}
-      vertical
-      visible={visible}
-    />
-    <Sidebar.Pusher
-      dimmed={visible}
-      onClick={onPusherClick}
-      style={{ minHeight: "10vh" }}
-    >
-      <Menu style= {{ marginBottom: "2em" }} fixed="top" >
+      <Menu style= {{ }} fixed="top" >
         <Menu.Item>
           <Image
             size="mini"
@@ -32,15 +18,12 @@ const NavBarMobile = ({
           />
         </Menu.Item>
         <Menu.Menu position="left">
-          {_.map(LeftItems, item => <Menu.Item {...item} />)}
+          {_.map(LeftItems, item => <Menu.Item style={{background: "#c0ffda"}} {...item} />)}
         </Menu.Menu>
         <Menu.Menu position="right">
-          {_.map(RightItems, item => <Menu.Item {...item} />)}
+          {_.map(RightItems, item => <Menu.Item style={{background: "whitesmoke"}} {...item} />)}
         </Menu.Menu>
       </Menu>
-      {children}
-    </Sidebar.Pusher>
-  </Sidebar.Pushable>
 );
 
 export default NavBarMobile;

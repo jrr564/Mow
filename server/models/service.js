@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 // define the User model schema
-const ServiceSchema = new mongoose.Schema({
+const ServiceSchema = new Schema({
   customerId: {
     type: Schema.Types.ObjectId,
     ref: 'User'
@@ -44,4 +44,5 @@ const ServiceSchema = new mongoose.Schema({
   proSatisfied: Boolean
 });
 
-module.exports = mongoose.model('Service', ServiceSchema);
+Service = mongoose.model('Service', ServiceSchema);
+module.exports = Service;
