@@ -1,6 +1,7 @@
 import React, { Component } from "react";  
 import { Form, Checkbox, Input } from "semantic-ui-react";
 
+
 export default class MaidAddOns extends Component {
   state = {};
   handleChange = (e, { value }) => this.setState({ value });

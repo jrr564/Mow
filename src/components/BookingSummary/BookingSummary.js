@@ -17,7 +17,7 @@ export default class BookingSummary extends Component {
   state = {}
 
   componentDidMount() {
-    console.log(this.props.location);
+    console.log(this.props.history);
   }
 
   render() {

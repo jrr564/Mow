@@ -46,6 +46,7 @@ class DayDropdown extends React.Component {
     const datePick = data.value;
     console.log(datePick);
     return datePick;
+
   } 
 
   componentDidUpdate = () => {
@@ -72,6 +73,7 @@ class DayDropdown extends React.Component {
         //   this.fetchDate(data)
         // }}
         onChange={( this.props.handleDayPick )}
+        // onChange={ (e) => this.props.handleDayPick(e)}
       />
     )
   }

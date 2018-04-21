@@ -15,26 +15,35 @@ import DayDropdown from "../DayDropdown/DayDropdown";
 import LawnAddOns from "../LawnAddOns/LawnAddOns";
 import AddressForm from "../AddressForm/AddressForm";
 import { BrowserRouter as Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 
 class LawnForm extends React.Component {
-  state = {
-    month: "",
-    date: [],
-    treeTrimming: true,
-    fertilizer: true,
-    hedging: true,
-    lotsize: "",
-    address: "",
-    city: "",
-    state: ""
-  };
+  constructor() {
+    super()
+    this.state = {
+      month: "",
+      date: [],
+      treeTrimming: true,
+      fertilizer: true,
+      hedging: true,
+      lotsize: "",
+      address: "",
+      city: "",
+      state: "",
+      timeSlotSelected: "morning"
+    };
+    this.handleTimeSlot = this.handleTimeSlot.bind(this);
+  }
+
 
   handleCheckbox = e => {
     const name = e.target.name;
     this.setState({ [name]: !this.state[name] });
     // console.log("NAME: " + name + "  ||  VALUE: " + this.state[name]);
   };
+  handleTimeSlot(e, time, statename) {
+    this.setState({ timeSlotSelected: [time] })
+  }
 
   callAPI = () => {
     const config = {
@@ -54,13 +63,7 @@ class LawnForm extends React.Component {
       "%2C%20" +
       this.state.state;
 
-    axios.get(url, config).then(response => {
-      this.setState({ lotsize: response.data.property[0].lot.lotsize1 });
-      console.log(this.state.lotsize);
-      this.calculateLawnCost();
-      // allows the API to finish before routing.
-      this.props.history.push(`/SuccessBooking`);
-    });
+
   };
 
   getValue = state => {
@@ -70,18 +73,28 @@ class LawnForm extends React.Component {
   calculateLawnCost = () => {
     console.log(this.state.lotsize);
     const startingRate = 15;
+    const costPerAcre = 75;
     const lotsize = this.state.lotsize;
     const treeTrimming = this.state.treeTrimming;
     const fertilizer = this.state.fertilizer;
     const hedging = this.state.hedging;
+    const calcLotSize = lotsize * costPerAcre;
     const calcTreeTrimming = this.getValue(treeTrimming);
     const calcFertilizer = this.getValue(fertilizer);
     const calcHedging = this.getValue(hedging);
-    // const calcLotSize = lotsize
+    const calcTotal = startingRate + calcLotSize + calcTreeTrimming + calcFertilizer + calcHedging
     
     console.log("Street: " + this.state.address + "\n"
                 + "City: " + this.state.city + "\n"
-                + "State: " + this.state.state);
+                + "State: " + this.state.state + "\n"
+                + "-----------------------------\n"
+                + "LotSize: " + lotsize + " $" + calcLotSize + "\n"
+                + "Tree Trimming: " + treeTrimming + " $" + calcTreeTrimming +  "\n"
+                + "Fertilizer: " + fertilizer + " $" + calcFertilizer + "\n"
+                + "Hedging" + hedging + " $" + calcFertilizer + "\n" 
+                + "TOTAL COST: $" + calcTotal + "\n"
+                + "Selected Time Slot: " + this.state.timeSlotSelected + "\n"
+                + "-----------------------------");
   };
 
   hanleAddressInput = e => {
@@ -93,7 +106,7 @@ class LawnForm extends React.Component {
   goToSignup = event => {
     event.preventDefault();
     this.callAPI();
-    // this.props.history.push(`/SuccessBooking`);   //move to callAPI for sync issues
+    this.props.history.push(`/SuccessBooking`);   //move to callAPI for sync issues
   };
 
   hanglePageChange = e => {
@@ -110,7 +123,8 @@ class LawnForm extends React.Component {
             >
               Lawn Service
             </Header>
-            <AddressForm 
+            {/* adding address input just incase i cant get from */}
+            <AddressForm    
               address={this.state.address}
               city={this.state.city}
               state={this.state.state}
@@ -131,7 +145,11 @@ class LawnForm extends React.Component {
                   </Form.Field>
                   <Form.Field style={{ textAlign: "center" }}>
                     <h1>Select Time Slot</h1>
-                    <TimeSlotSelection size="huge" />
+                    <TimeSlotSelection 
+                      size="huge" 
+                      timeSlotSelected={this.state.timeSlotSelected}
+                      handleTimeSlot={this.handleTimeSlot}
+                    />
                   </Form.Field>
                 </Form.Group>
               </Grid.Column>

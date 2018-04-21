@@ -20,6 +20,7 @@ class MaidForm extends React.Component {
   constructor() {
     super()
     this.state = {
+      service: [],
       month: "",
       day: [],
       timeSlotSelected: "morning",  
@@ -34,13 +35,16 @@ class MaidForm extends React.Component {
       windowClean: false,
       finalPrice: [],
       isMounted:false,
+      
     };
-  
     this.handleTimeSlot = this.handleTimeSlot.bind(this);
     this.calculateMaidCost = this.calculateMaidCost.bind(this);
     this.calculateMaidCost = this.calculateMaidCost.bind(this);
+    this.handleDayPick = this.handleDayPick.bind(this);
+    this.goToSignup = this.goToSignup.bind(this);
+    this.hanglePageChange = this.handleChildChange.bind(this);
   }
-  
+
 
   handleMonthsChange = e => {
     //   
@@ -70,10 +74,13 @@ class MaidForm extends React.Component {
         var daySet = parseDayArr[0] += parseDayArr[1];        
       }
       console.log(daySet)
-      // this.setState({ day: daySet});
+      this.setState({ day: daySet});
     })
     
     console.log("DAY  ======= " + this.state.day);
+  }
+  handleDayPick1(e, name) {
+    console.log(e.target);
   }
   handleTimeSlot(e, time, stateName) {
     this.setState({ timeSlotSelected: [time] })
@@ -136,9 +143,9 @@ class MaidForm extends React.Component {
                 + "Hardwood Floor Clean: " + woodFloorClean + " $" + calcWoodFloorClean + "\n"
                 + "Laundry:              " + laundry + " $" + calcLaundry + "\n"
                 + "Window Clean:         " + windowClean + " $" + calcWindowClean + "\n"
-                + "FINAL COST: $" + caltTotal + "\n"
+                + "TOTAL COST: $" + caltTotal + "\n"
                 + "-------------------------------");
-    console.log("Time Selected: " + this.state.timeSlotSelected)
+    console.log("Selected Time: " + this.state.timeSlotSelected)
     console.log("final Price $" + this.state.finalPrice);
 
   };
@@ -149,77 +156,24 @@ class MaidForm extends React.Component {
 
   goToSignup = event => {
     this.calculateMaidCost();
-    // this.props.history.push(`/SuccessBooking`);
+    // this.nextPage();
+    // const { history: {push} } = this.props;
+    // push('/SuccessBooking')
+    this.props.history.push(`/SuccessBooking`);
 
   };
+
+  nextPage() {
+    const { history: {push} } = this.props;
+    push('/SuccessBooking')
+  }
 
   hanglePageChange = e => {
     console.log("++++++++++++++++++++++++++++  PAGE UPDATE  ++++++++++++++++++++++++++++");
     
     // this.calculateMaidCost();
-    this.props.history.push(`/SuccessBooking`);
   } 
-  render() {
-    return(
-  <div>
-    <Container style={{ width: "80%", margin: "30px" }}>
-      <Form size="huge">
-        <Header textAlign="center" color="blue">
-          Maid Service
-        </Header>
-        <Form.Group grouped>
-          <Form.Field>
-            <label>Month</label>
-            <MonthDropdown 
-              month={this.state.month}
-              handleMonthsChange={this.handleMonthsChange}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>Date</label>
-            <DayDropdown />
-          </Form.Field>
-          <Form.Field>
-            <label>Select Time Slot</label>
-            <TimeSlotSelection size="huge" />
-          </Form.Field>
-        </Form.Group>
-        <Form.Group grouped>
-          <Form.Field inline>
-            <label>Add Ons (Extra Charges Apply)</label>
-            <MaidAddOns 
-              size="huge" 
-              bedrooms={this.state.bedrooms}
-              bathrooms={this.state.bathrooms}
-              halfbaths={this.state.halfbaths}
-              carpetClean={this.state.carpetClean}
-              ovenClean={this.state.ovenClean}
-              woodFloorClean={this.state.woodFloorClean}
-              laundry={this.state.laundry}
-              windowClean={this.state.windowClean}
-              handleChildChange={this.handleChildChange}
-              handleChildCheckbox={this.handleChildCheckbox}
-            />
-          </Form.Field>
-        </Form.Group>
-        <Grid columns="equal">
-          <Grid.Column />
-          <Grid.Column>
-              <Button   
-                onClick={this.goToSignup} 
-                color="blue"  
-                size="huge" 
-                type="submit">
-                Schedule Booking
-              </Button>
-          </Grid.Column>
-          <Grid.Column />
-        </Grid>
-      </Form>
-    </Container>
-  </div>
-    )
-  }
+  
   render() {
     return (
       <div onChange={this.hanglePageChange}>
