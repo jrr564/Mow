@@ -1,11 +1,11 @@
 import React from "react";
 import "./SignUpForm3Contractor.css";
-import { Button, Form, Segment, Container } from "semantic-ui-react";
+import { Button, Form, Grid, Segment, Container } from "semantic-ui-react";
 
 const SignUpForm3Contractor = () => (
   <div>
     <Container>
-      <Segment>
+      <Segment style={{ padding: "2em 4em 2em 4em" }}>
         <Form>
           <Form.Field>
             <label>Company Name</label>
@@ -19,10 +19,13 @@ const SignUpForm3Contractor = () => (
             <label>Routing Number</label>
             <input />
           </Form.Field>
-
-          <Button size="huge" type="submit">
-            Submit
-          </Button>
+          <Grid centered columns={3}>
+            <Grid.Column>
+              <Button fluid size="huge" type="submit">
+                Submit
+              </Button>
+            </Grid.Column>
+          </Grid>
         </Form>
       </Segment>
     </Container>

@@ -1,104 +1,95 @@
-import React from "react";
-import "./SignUpForm3Customer.css";
-import { Button, Form, Dropdown, Segment, Container } from "semantic-ui-react";
+import React, { Component } from "react";
+import {
+  Button,
+  Container,
+  Checkbox,
+  Form,
+  Grid,
+  Icon,
+  Input,
+  Radio,
+  Segment,
+  Select,
+  TextArea
+} from "semantic-ui-react";
 
-const SignUpForm3Customer = () => (
-  <div>
-    <Container>
-      <Segment>
-        <Form>
-          <h4 class="ui dividing header">Billing Information</h4>
-          <div class="field">
-            <label>Card Type</label>
-            <div class="ui selection dropdown">
-              <input type="hidden" name="card[type]" />
-              <div class="default text">Type</div>
-              <i class="dropdown icon" />
-              <div class="menu">
-                <div class="item" data-value="visa">
-                  <i class="visa icon" />
-                  Visa
-                </div>
-                <div class="item" data-value="amex">
-                  <i class="amex icon" />
-                  American Express
-                </div>
-                <div class="item" data-value="discover">
-                  <i class="discover icon" />
-                  Discover
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="fields">
-            <div class="seven wide field">
-              <label>Card Number</label>
-              <input
-                type="text"
-                name="card[number]"
-                maxlength="16"
-                placeholder="Card #"
-              />
-            </div>
-            <div class="three wide field">
-              <label>CVC</label>
-              <input
-                type="text"
-                name="card[cvc]"
-                maxlength="3"
-                placeholder="CVC"
-              />
-            </div>
-            <div class="six wide field">
-              <label>Expiration</label>
-              <div class="two fields">
-                <div class="field">
-                  <select
-                    class="ui fluid search dropdown"
-                    name="card[expire-month]"
-                  >
-                    <option value="">Month</option>
-                    <option value="1">January</option>
-                    <option value="2">February</option>
-                    <option value="3">March</option>
-                    <option value="4">April</option>
-                    <option value="5">May</option>
-                    <option value="6">June</option>
-                    <option value="7">July</option>
-                    <option value="8">August</option>
-                    <option value="9">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <input
-                    type="text"
-                    name="card[expire-year]"
-                    maxlength="4"
-                    placeholder="Year"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <Form.Field>
-            <label>Credit Card Number</label>
-            <input />
-          </Form.Field>
-          <Form.Field>
-            <label>Security Code</label>
-            <input maxLength="4" />
-          </Form.Field>
+const options = [
+  { key: "visa", text: "Visa", value: "Visa" },
+  { key: "mastercard", text: "Mastercard", value: "Mastercard" },
+  { key: "discover", text: "Discover", value: "Discover" },
+  { key: "american", text: "American Express", value: "American Express" }
+];
 
-          <Button inverted size="huge" type="submit">
-            Submit
-          </Button>
-        </Form>
-      </Segment>
-    </Container>
-  </div>
-);
+class SignUpForm3Customer extends Component {
+  state = {};
+
+  handleChange = (e, { value }) => this.setState({ value });
+
+  render() {
+    const { value } = this.state;
+    return (
+      <Container>
+         <Segment style={{ padding: "2em 4em 2em 4em" }}>
+          <Form size="large">
+            <Form.Group>
+              <Form.Field
+                width={12}
+                control={Input}
+                label="Card Number"
+                placeholder="Card Number"
+              />
+            </Form.Group>
+            <Form.Group inline>
+              <Icon style={{ margin: "5px 5px" }} size="large" name="visa" />
+              <Icon
+                style={{ margin: "5px 5px" }}
+                size="large"
+                name="mastercard"
+              />
+              <Icon
+                style={{ margin: "5px 5px" }}
+                size="large"
+                name="discover"
+              />
+              <Icon
+                style={{ margin: "5px 5px" }}
+                size="large"
+                name="american express"
+              />
+            </Form.Group>
+            <Form.Group widths="equal">
+              <Form.Select
+                fluid
+                options={options}
+                label="Card Type"
+                placeholder="Type"
+              />
+
+              <Form.Field control={Input} label="CVC" placeholder="CVC" />
+              <Form.Field
+                control={Input}
+                label="Exp. Date"
+                placeholder="xx/xx"
+              />
+            </Form.Group>
+          </Form>
+          <Grid centered columns={3}>
+            <Grid.Column>
+              <Button
+                fluid
+                padded
+                className="centered"
+                size="big"
+                type="submit"
+              >
+                Submit
+              </Button>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+      </Container>
+    );
+  }
+}
 
 export default SignUpForm3Customer;

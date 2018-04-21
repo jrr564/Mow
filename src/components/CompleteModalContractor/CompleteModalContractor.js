@@ -1,5 +1,5 @@
 import React from "react";
-import "./ServiceReviewModalContractor.css";
+import "./CompleteModalContractor.css";
 import {
   Button,
   Header,
@@ -10,10 +10,11 @@ import {
   Form
 } from "semantic-ui-react";
 
-const ServiceReviewModalContractor = () => (
+const CompleteModalContractor = () => (
   <Modal
     textAlign="center"
-    trigger={<Button size="huge">Review Service</Button>}
+    trigger={<Button size="small">Complete
+    </Button>}
   >
     <Modal.Content image>
       <Modal.Description textAlign="center">
@@ -51,4 +52,4 @@ const ServiceReviewModalContractor = () => (
   </Modal>
 );
 
-export default ServiceReviewModalContractor;
+export default CompleteModalContractor;

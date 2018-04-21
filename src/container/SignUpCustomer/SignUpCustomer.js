@@ -1,6 +1,7 @@
 import React from "react";
 import "./SignUpCustomer.css";
-import NavBar from "../../components/NavBar/NavBar";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "../../components/Navbar/Navbar";
 import LeftItems from "../../components/LeftItems/LeftItems";
 import RightItems from "../../components/RightItems/RightItems";
 import SignUpForm1 from "../../components/SignUpForm1/SignUpForm1";
@@ -10,14 +11,16 @@ import SignUpFormStep from "../../components/SignUpFormStep/SignUpFormStep";
 import Footer from "../../components/Footer/Footer";
 
 const SignUpCustomer = () => (
-    <div>
-      <NavBar LeftItems={LeftItems} RightItems={RightItems} />
-      <SignUpFormStep/>
-      <SignUpForm1/>
-      <SignUpForm2/>
-      <SignUpForm3Customer/>
-      <Footer />
-    </div>
-  );
+  <div>
+    <Navbar LeftItems={LeftItems} RightItems={RightItems} />
+    <SignUpFormStep />
+    <Switch>
+      <Route path="/SignUpCustomer/SignUpForm1" component={SignUpForm1} />
+      <Route path="/SignUpCustomer/SignUpForm2" component={SignUpForm2} />
+      <Route path="/SignUpCustomer/SignUpForm3Customer" component={SignUpForm3Customer} />
+    </Switch>
+    <Footer />
+  </div>
+);
 
 export default SignUpCustomer;

@@ -1,16 +1,27 @@
 import React from "react";
-import { Header, Segment, Table, Rating, Container, Button } from "semantic-ui-react";
+import {
+  Header,
+  Segment,
+  Table,
+  Rating,
+  Container,
+  Button
+} from "semantic-ui-react";
+import ServiceReviewModalContractor from "../ServiceReviewModalCustomer/ServiceReviewModalCustomer";
+import CompleteModalContractor from "../CompleteModalContractor/CompleteModalContractor";
 
 const WorkSummary = () => (
-  <Container style={{margin: "30px"}}>
-    <Segment as="h1">Service History</Segment>
-    <Table celled padded>
+  <Container style={{ margin: "30px" }}>
+    <Segment attached textAlign="center" size="huge" as="h1">
+      Service History
+    </Segment>
+    <Table attached celled padded>
       <Table.Header>
         <Table.Row>
           <Table.HeaderCell singleLine>Date</Table.HeaderCell>
           <Table.HeaderCell>Name / Address</Table.HeaderCell>
           <Table.HeaderCell>Phone Number</Table.HeaderCell>
-          <Table.HeaderCell>Efficacy</Table.HeaderCell>
+          <Table.HeaderCell>Review</Table.HeaderCell>
           <Table.HeaderCell>Total</Table.HeaderCell>
           <Table.HeaderCell>Comments</Table.HeaderCell>
         </Table.Row>
@@ -18,7 +29,7 @@ const WorkSummary = () => (
 
       <Table.Body>
         <Table.Row positive>
-          <Table.Cell >
+          <Table.Cell>
             <Header textAlign="center">April 22, 2018</Header>
           </Table.Cell>
           <Table.Cell singleLine>3425 Fake St.</Table.Cell>
@@ -30,7 +41,9 @@ const WorkSummary = () => (
             $180 <br />
             <a href="#">Bill</a>
           </Table.Cell>
-          <Table.Cell disabled></Table.Cell>
+          <Table.Cell textAlign="center">
+            <CompleteModalContractor/>
+          </Table.Cell>
         </Table.Row>
         <Table.Row>
           <Table.Cell>
@@ -45,8 +58,9 @@ const WorkSummary = () => (
             $180 <br />
             <a href="#">Bill</a>
           </Table.Cell>
-          <Table.Cell><Button size="tiny">Edit</Button> Dog very loud. No trash cans.
-            
+          <Table.Cell>
+            <ServiceReviewModalContractor/>
+            Dog very loud. No trash cans.
           </Table.Cell>
         </Table.Row>
         <Table.Row>
@@ -62,7 +76,9 @@ const WorkSummary = () => (
             $140 <br />
             <a href="#">Bill</a>
           </Table.Cell>
-          <Table.Cell> <Button size="tiny">Edit</Button> 
+          <Table.Cell>
+            {" "}
+            <ServiceReviewModalContractor/>
             Everything went great. Owner gave us lemonade.
           </Table.Cell>
         </Table.Row>
@@ -79,7 +95,9 @@ const WorkSummary = () => (
             $220 <br />
             <a href="#">Bill</a>
           </Table.Cell>
-          <Table.Cell><Button size="tiny">Edit</Button> No comments.</Table.Cell>
+          <Table.Cell>
+          <ServiceReviewModalContractor/> No comments.
+          </Table.Cell>
         </Table.Row>
       </Table.Body>
     </Table>

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   Button,
   Form,
   Container,
+  Grid,
   Input,
   Segment,
   Header
@@ -11,14 +12,22 @@ import TimeSlotSelection from "../TimeSlotSelection/TimeSlotSelection";
 import MonthDropdown from "../MonthDropdown/MonthDropdown";
 import DayDropdown from "../DayDropdown/DayDropdown";
 import MaidAddOns from "../MaidAddOns/MaidAddOns";
+import { BrowserRouter as Link } from "react-router-dom";
 
-const MaidForm = () => (
+class MaidForm extends React.Component {
+  goToSignup = event => {
+    this.props.history.push(`/SuccessBooking`);
+}
+  render() {
+    return(
   <div>
-    <Container style={{width: "80%", margin: "30px"}}>
+    <Container style={{ width: "80%", margin: "30px" }}>
       <Form size="huge">
-        <Header>Book Maid Service</Header>
-        <Form.Group grouped >
-          <Form.Field >
+        <Header textAlign="center" color="blue">
+          Maid Service
+        </Header>
+        <Form.Group grouped>
+          <Form.Field>
             <label>Month</label>
             <MonthDropdown />
           </Form.Field>
@@ -37,13 +46,20 @@ const MaidForm = () => (
             <MaidAddOns size="huge" />
           </Form.Field>
         </Form.Group>
-
-        <Button bold size="huge" type="submit">
-          Schedule Booking 
-        </Button>
+        <Grid columns="equal">
+          <Grid.Column />
+          <Grid.Column>
+              <Button onClick={this.goToSignup} color="blue" bold size="huge" type="submit">
+                Schedule Booking
+              </Button>
+          </Grid.Column>
+          <Grid.Column />
+        </Grid>
       </Form>
     </Container>
   </div>
-);
+    )
+  }
+}
 
 export default MaidForm;
