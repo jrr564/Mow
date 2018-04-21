@@ -156,6 +156,69 @@ class MaidForm extends React.Component {
   hanglePageChange = e => {
     console.log("++++++++++++++++++++++++++++  PAGE UPDATE  ++++++++++++++++++++++++++++");
     
+    // this.calculateMaidCost();
+    this.props.history.push(`/SuccessBooking`);
+  } 
+  render() {
+    return(
+  <div>
+    <Container style={{ width: "80%", margin: "30px" }}>
+      <Form size="huge">
+        <Header textAlign="center" color="blue">
+          Maid Service
+        </Header>
+        <Form.Group grouped>
+          <Form.Field>
+            <label>Month</label>
+            <MonthDropdown 
+              month={this.state.month}
+              handleMonthsChange={this.handleMonthsChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>Date</label>
+            <DayDropdown />
+          </Form.Field>
+          <Form.Field>
+            <label>Select Time Slot</label>
+            <TimeSlotSelection size="huge" />
+          </Form.Field>
+        </Form.Group>
+        <Form.Group grouped>
+          <Form.Field inline>
+            <label>Add Ons (Extra Charges Apply)</label>
+            <MaidAddOns 
+              size="huge" 
+              bedrooms={this.state.bedrooms}
+              bathrooms={this.state.bathrooms}
+              halfbaths={this.state.halfbaths}
+              carpetClean={this.state.carpetClean}
+              ovenClean={this.state.ovenClean}
+              woodFloorClean={this.state.woodFloorClean}
+              laundry={this.state.laundry}
+              windowClean={this.state.windowClean}
+              handleChildChange={this.handleChildChange}
+              handleChildCheckbox={this.handleChildCheckbox}
+            />
+          </Form.Field>
+        </Form.Group>
+        <Grid columns="equal">
+          <Grid.Column />
+          <Grid.Column>
+              <Button   
+                onClick={this.goToSignup} 
+                color="blue"  
+                size="huge" 
+                type="submit">
+                Schedule Booking
+              </Button>
+          </Grid.Column>
+          <Grid.Column />
+        </Grid>
+      </Form>
+    </Container>
+  </div>
+    )
   }
   render() {
     return (
