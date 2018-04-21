@@ -10,37 +10,17 @@
 
 .background1 {
     background-color: #71a03f;
-    width: 100%;
-    height: 602px;
 }
 
 .iconmenu {
     margin: auto;
 }
 
-.appLogo {
+.App-logo {
     /* animation: App-logo-spin infinite 20s linear; */
-    height: 120px;
+    height: 200px;
+    margin-right: 15%;
     z-index: 1;
-    margin: auto;
-    text-align: center;
-}
-
-.headerText {
-    color: black;
-    font-size: 5em;
-    margin: -10px;
-}
-
-.text {
-    color: black;
-    font-size: 1.5em;
-}
-
-.callText {
-    font-family: 'Fjalla One', sans-serif;
-    color: black;
-    font-size: 1.5em;
 }
 
 .button1 {
@@ -50,13 +30,8 @@
 .App-header {
     background-color: rgb(255, 255, 255);
     height: 150px;
+    padding: 20px;
     color: white;
-    margin-top: 15px;
-}
-
-.upkeepLogo {
-    margin-left: -690px;
-    position: relative;
 }
 
 .App-title {
@@ -68,13 +43,13 @@
 }
 
 .grass {
+    top: 100px;
     margin: auto;
 }
 
 .paperReview {
-    box-sizing: content-box;
-    width: 100%;
-    overflow: auto;
+    margin-top: -50px;
+    margin-left: -190px;
 }
 
 .Customer-Choice {
@@ -111,31 +86,26 @@
 .container {
     padding-left: 20px;
     padding-right: 20px;
-    width: 100%;
 }
 
 .line {
     width: 50%;
 }
 
-.rowReviews {}
 
-.button1 {}
-
-.row {
+/* .row {
     width: 100%;
     max-width: 1140px;
     min-width: 755px;
     margin: 0 auto;
     overflow: hidden;
-}
+} */
 
-
-/* @keyframes App-logo-spin {
+@keyframes App-logo-spin {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
     }
-} */
+}

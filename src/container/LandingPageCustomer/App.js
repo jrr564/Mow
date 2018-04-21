@@ -1,7 +1,6 @@
-import React, { Component } from "react";
-import "./LandingPageCustomer.css";
-import { Button  } from "semantic-ui-react";
+import React, { Component } from 'react';
 import logo from './logo.svg';
+import './App.css';
 import "./button.css";
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -22,85 +21,48 @@ import grass1 from "./grass1.png";
 import headerText from "./headerText.svg";
 import grassScene from "./grassScene.png";
 import starRating from "./starRating.svg";
-import SimpleSlider from "./carousel.js";
-import cnbc from "./cnbc.png";
-import usaToday from "./usatoday.png";
-import theGuardian from "./theguardian.png";
 
-
-
-class LandingPageCustomer extends React.Component {
-
-    
-    goToSignup = event => {
-        this.props.history.push(`/SignUpCustomer/SignUpForm1`);
-    }
+class App extends Component {
   render() {
-      return(
-        
-
-            <MuiThemeProvider>
+    return (
+      <MuiThemeProvider>
      <div className="body">
-     
       <div className="App">
     <AppBarExampleIcon iconClassNameLeft={BadgeExampleSimple}
 color1 = {lightGreen600} />
-
 {/* <div className = "iconmenu"> <IconMenuExampleSimple/> </div> */}
 
-        
-          
-        <header className="App-header">
-        <div className="upkeepLogo">
-        <img src={logo} className="appLogo" alt="logo" style={{margin: 0, height:80}}/>
-        </div>
-          ç<h2 className="headerText">Lawn service and home cleaning done right.</h2>
-          <div className="button1">
-          <Button className="button" onClick={this.goToSignup} inverted color="green" backgroundColor = "Transparent"
 
-      hoverColor="#8AA62F"
-      label="Book Now"
-style = {{
-    margin: 20,
-    height: 70,
-    width: 800,
-    marginLeft:400,
-borderRadius : 3,
-border : 0,
-// padding : '0 30px',
-boxShadow : '0 3px 5px 2px rgba(0, 0, 15, .30)'
-}}/>
-          <h2 className="callText">or give us a call at 866-421-UpKeep</h2>
-       
+  
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" style={{margin: 0}}/>
+          <div className="button1"><RaisedButtonExampleSimple/>
           {/* <img src={grassScene} className="grassScene" style={{ margin:-120, marginTop:-1100,width:"auto"}} /> */}
           
-          
+           <hr className="line" />
            
            </div>
            <div className="rating">
             {/* <p>UpKeep is rated 5 out of 5 stars on Angie's List</p>          */}
              </div>
-             <h4 className="text">5 out of 5 stars on Angie's List</h4>
              <img src={starRating} style={{ height: '20%', margin: 2}}  />
              <img src={starRating} style={{ height: '20%', margin: 2}}  />
              <img src={starRating} style={{ height: '20%', margin: 2}}  />
              <img src={starRating} style={{ height: '20%', margin: 2}}  />
-             <img src={starRating} style={{ height: '20%', margin: 2}}  /> 
-             
-              <br />     
-               <hr className="line" /> 
-           <img src={forbes} style={{ height: '17%', margin: 10 }}  />
-           <img src={cnbc} style={{ height: '17%', margin: 10 }}  />
-           <img src={usaToday} style={{ height: '17%', margin: 10 }}  />
-           <img src={theGuardian} style={{ height: '17%', margin: 10 }}  />
+             <img src={starRating} style={{ height: '20%', margin: 2}}  />
+              <br />      
+           <img src={forbes} style={{ height: '15%', margin: 10 }}  />
+           <img src={forbes} style={{ height: '15%', margin: 10 }}  />
+           <img src={forbes} style={{ height: '15%', margin: 10 }}  />
+           <img src={forbes} style={{ height: '15%', margin: 10 }}  />
            
-        
+          <h1 className="App-title">Welcome to Rea</h1>
         </header>
         
         <div className="Container">
         <h1 className="row App-intro">
         
-          
+          <img src={headerText} className="headerText" style={{marginTop: -10, height: 70, margin: 0}}/>
         </h1>
        
       </div>
@@ -108,16 +70,14 @@ boxShadow : '0 3px 5px 2px rgba(0, 0, 15, .30)'
       
       <div classname="Grass">
       
-      <img src={grass1} className="grass" style={{ margin:"auto", width:"auto", marginTop:500}} />
+      <img src={grass1} className="grass" style={{ margin:"auto", width:"auto", marginTop:200}} />
       </div>
       
       <div className="background1">
-      <PaperExampleSimple />
       <div className="Container">
       <div className="row Customer-Choice">
        <div className="paperReview">
-       
-       
+       <PaperExampleSimple />
       </div>
      
       </div>
@@ -138,18 +98,17 @@ boxShadow : '0 3px 5px 2px rgba(0, 0, 15, .30)'
      
      </div>
      <div className="Container">
-     <div className="rowReviews">
-     <SimpleSlider/>
+     <div className="row reviews">
+     <PaperExampleSimple2  />
      
      </div>
      
      </div>
      </div>
-     
     </MuiThemeProvider>
     
     );
   }
 }
 
-export default LandingPageCustomer;
+export default App;
