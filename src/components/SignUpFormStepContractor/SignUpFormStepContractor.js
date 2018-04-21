@@ -24,7 +24,7 @@ export default class SignUpFormStep extends Component {
           fluid
           attached="top"
         >
-          <Link to="/SignUpCustomer/SignUpForm1">
+          <Link to="/SignUpContractor/SignUpForm1">
             <Step
               active={active === "Email"}
               form="Form"
@@ -42,7 +42,7 @@ export default class SignUpFormStep extends Component {
               </Step.Content>
             </Step>
           </Link>
-          <Link to="/SignUpCustomer/SignUpForm2">
+          <Link to="/SignUpContractor/SignUpForm2">
             <Step
               active={active === "Home Address"}
               form="Form"
@@ -60,7 +60,7 @@ export default class SignUpFormStep extends Component {
               </Step.Content>
             </Step>
           </Link>
-          <Link to="/SignUpCustomer/SignUpForm3Contractor">
+          <Link to="/SignUpContractor/SignUpForm3Contractor">
             <Step
               active={active === "Banking"}
               form="Form"

@@ -3,7 +3,6 @@ import "./SignUpContractor.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "semantic-ui-react";
-import LeftItems from "../../components/LeftItems/LeftItems";
 import RightItems from "../../components/RightItems/RightItems";
 import SignUpFormStepContractor from "../../components/SignUpFormStepContractor/SignUpFormStepContractor";
 import SignUpForm1 from "../../components/SignUpForm1/SignUpForm1";
@@ -13,7 +12,7 @@ import Footer from "../../components/Footer/Footer";
 
 const SignUpContractor = () => (
   <div>
-    <Navbar LeftItems={LeftItems} RightItems={RightItems} />
+    <Navbar RightItems={RightItems} />
       <SignUpFormStepContractor />
       <Switch>
         <Route path="/SignUpContractor/SignUpForm1" component={SignUpForm1} />

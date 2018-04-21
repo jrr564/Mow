@@ -4,6 +4,9 @@
     -webkit-animation: animation 4800ms linear infinite both;
     animation: animation 4800ms linear infinite both;
     animation-iteration-count: 2;
+    position: absolute;
+    right: -80px;
+    up: 400px !important;
   }
   
   /* Generated with Bounce.js. Edit at https://goo.gl/R15eHF */

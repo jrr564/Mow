@@ -54,7 +54,7 @@ const ContractorInfo = () => (
           <Header size="tiny">YTD Gross</Header> $$$$$
         </Segment>
         <Segment>
-          <Link to="/SignUpCustomer/SignUpForm2">
+          <Link to="/SignUpContractor/SignUpForm2">
             <Button fluid>Edit Information</Button>
           </Link>
         </Segment>
