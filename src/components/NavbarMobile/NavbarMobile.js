@@ -13,8 +13,10 @@ const NavBarMobile = ({
       <Menu style= {{ }} fixed="top" >
         <Menu.Item>
           <Image
-            size="mini"
-            src="https://d30y9cdsu7xlg0.cloudfront.net/png/12106-200.png"
+          alt="logo"
+            size="tiny"
+            src={require('../Navbar/logo.svg')}
+            href="/"
           />
         </Menu.Item>
         <Menu.Menu position="left">

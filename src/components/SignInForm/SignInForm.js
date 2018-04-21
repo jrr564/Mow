@@ -44,7 +44,7 @@ class SignInForm extends React.Component {
               />
               <Grid centered columns="equal">
                 <Grid.Column>
-                  <Button onClick={this.goToAccount} size="big" type="submit">
+                  <Button href="/CustomerAccount" size="big" type="submit">
                     {" "}
                     Log In
                   </Button>
