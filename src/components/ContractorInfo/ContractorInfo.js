@@ -10,7 +10,7 @@ import SegmentGroup, {
 } from "semantic-ui-react";
 
 const ContractorInfo = () => (
-  <Container style={{ width: "60%" }}>
+  <Container style={{ width: "80%" }}>
     <Segment.Group>
       <Segment as="h1" size="huge" textAlign='center'>
       Account Information <Icon name="id card"/>

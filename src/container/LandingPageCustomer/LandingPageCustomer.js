@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./LandingPageCustomer.css";
-import { Button  } from "semantic-ui-react";
+import { Button, Image  } from "semantic-ui-react";
 import logo from './logo.svg';
 import "./button.css";
 import ReactDOM from 'react-dom';
@@ -54,6 +54,7 @@ class LandingPageCustomer extends React.Component {
           
         <header className="App-header">
         <div className="upkeepLogo">
+        <Image src={logo} className="appLogo" size="medium" alt="logo" style={{marginTop: "40px", marginLeft: "50%"}} />
         </div>
           ç<h2 className="headerText">Lawn service and home cleaning done right.</h2>
           <div className="button1">

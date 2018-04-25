@@ -10,8 +10,9 @@ const ContractorAccount = () => (
   <div>
     <Navbar RightItems={RightItems} />
     <div class="content">
-    <ContractorInfo />
     <WorkSummary />
+    <ContractorInfo />
+    
     </div>
     <Footer />
   </div>
