@@ -1,7 +1,7 @@
 {
   "name": "mow",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "dependencies": {
     "ajv": "^6.4.0",
     "axios": "^0.18.0",
@@ -31,7 +31,7 @@
     "semantic-ui-react": "^0.79.1"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -39,6 +39,6 @@
 
   },
   "engines": {
-    "node": "6.26.0"
+    "node": "5.10.0"
 }
 }
