@@ -17,4 +17,4 @@ UpKeep is a lawn and housecleaning ordering service built with React, Create Rea
 
 ![ScreenShot](/screenshots/account_information.png)
 
-![ScreenShot](/screenshots/successful_booking.pmg)
+![ScreenShot](/screenshots/successful_booking.png)
