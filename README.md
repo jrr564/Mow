@@ -7,16 +7,14 @@ UpKeep is a lawn and housecleaning ordering service built with React, Create Rea
 
 ![ScreenShot](/screenshots/welcome_page.png)
 
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![ScreenShot](/screenshots/login.png)
 
-![ScreenShot](https://raw.github.com/{jrr564}/{UpKeep}/{master}/{screenshots/login})
+![ScreenShot](/screenshots/responsive_login.png)
 
-![ScreenShot](https://raw.github.com/{jrr564}/{UpKeep}/{master}/{screenshots/responsive_login})
+![ScreenShot](/screenshots/schedule_service.png)
 
-![ScreenShot](https://raw.github.com/{jrr564}/{UpKeep}/{master}/{screenshots/schedule_service})
+![ScreenShot](/screenshots/responsive_schedule_service.png)
 
-![ScreenShot](https://raw.github.com/{jrr564}/{UpKeep}/{master}/{screenshots/responsive_schedule_service})
+![ScreenShot](/screenshots/account_information.png)
 
-![ScreenShot](https://raw.github.com/{jrr564}/{UpKeep}/{master}/{screenshots/account_information})
-
-![ScreenShot](https://raw.github.com/{jrr564}/{UpKeep}/{master}/{screenshots/successful_booking})
+![ScreenShot](/screenshots/successful_booking.pmg)
